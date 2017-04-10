@@ -1,0 +1,23 @@
+group 'com.quantifiedcare'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+mainClassName = 'com.quantifiedcare.ses.SesSample'
+
+run {
+    environment ('AWS_ACCESS_KEY_ID', '<ACCESS KEY HERE>')
+    environment ('AWS_SECRET_KEY', '<ACCESS SECRET HERE>')
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.amazonaws:aws-java-sdk-ses:1.11.117'
+    testCompile 'junit:junit:4.12'
+}
